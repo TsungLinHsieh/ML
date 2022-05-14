@@ -1,0 +1,11 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+import joblib # this object has method for saving and loading models
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+model = joblib.load('music-recommender.joblib') # laod our trained model
+
+predictions = model.predict([[21,1]])
+predictions
